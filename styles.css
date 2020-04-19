@@ -9,7 +9,10 @@ body {
 body {
   text-align: center;
   padding: 50px 20px 20px 20px;
-  background-color: #90b7e4;
+  background-color: hsl(212, 61%, 63%);
+  background-image: url("./assets/bg.jpg");
+  background-size: 20%;
+  /* background-blend-mode: multiply; */
   color: #ffffff;
   font-size: 40px;
   font-family: "Helvetica", sans-serif;
@@ -20,11 +23,12 @@ body {
   flex: 1;
   overflow-y: scroll;
 }
-a {
-  color: hsl(212, 41%, 43%);
+a,
+a:visited {
+  color: hsl(190, 100%, 80%);
 }
 a:active {
-  color: hsl(212, 41%, 33%);
+  color: hsl(212, 100%, 40%);
 }
 .wrapper {
   display: flex;
@@ -35,6 +39,7 @@ a:active {
   max-width: 80%;
 }
 #loading-container {
+  min-height: 500px;
   color: hsl(0, 0%, 100%, 0.8);
   opacity: 0.6;
   display: flex;
@@ -42,6 +47,12 @@ a:active {
   justify-content: center;
   flex: 1;
   flex-direction: column;
+}
+#results-container {
+  min-height: 500px;
+}
+#results-container p {
+  margin: 0;
 }
 #results-container {
   display: none;
@@ -52,14 +63,18 @@ a:active {
   flex-direction: column;
   margin-bottom: 30px;
 }
-#results-container p {
-  margin: 0;
-}
-#answer {
+#results-container #answer {
   font-weight: 800;
-  font-size: 3em;
+  font-size: 4em;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+#results-container #updated_at {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.4em;
+  letter-spacing: normal;
+  opacity: 0.8;
 }
 .spaced {
   letter-spacing: 0.1em;
@@ -93,7 +108,7 @@ a:active {
 }
 .credits {
   margin: 30px;
-  opacity: 0.5;
+  opacity: 0.8;
   font-size: 0.5em;
   letter-spacing: normal;
   font-style: italic;
