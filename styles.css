@@ -9,10 +9,9 @@ body {
 body {
   text-align: center;
   padding: 50px 20px 20px 20px;
-  background-color: hsl(212, 61%, 63%);
+  background-color: hsl(212, 21%, 53%);
   background-image: url("./assets/bg.jpg");
   background-size: 20%;
-  /* background-blend-mode: multiply; */
   color: #ffffff;
   font-size: 40px;
   font-family: "Helvetica", sans-serif;
@@ -25,10 +24,15 @@ body {
 }
 a,
 a:visited {
-  color: hsl(190, 100%, 80%);
+  color: hsl(200, 100%, 80%);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 a:active {
-  color: hsl(212, 100%, 40%);
+  color: hsl(194, 95%, 60%);
+  text-decoration: underline;
 }
 .wrapper {
   display: flex;
@@ -65,9 +69,11 @@ a:active {
 }
 #results-container #answer {
   font-weight: 800;
-  font-size: 4em;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  font-size: 3em;
+}
+#results-container #info {
+  font-size: 0.8em;
+  font-size: 2em;
 }
 #results-container #updated_at {
   margin-top: 2em;

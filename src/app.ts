@@ -33,13 +33,14 @@ function checkIfInCharts() {
             const date = new Date(0);
             date.setUTCSeconds(response.updated_at / 1000);
 
-            document.getElementById("answer").innerHTML = "YES";
-            document.getElementById("info").innerHTML =
-              "<a href='https://www.officialcharts.com/charts/' target='_blank'>Its at #" +
+            document.getElementById("answer").innerHTML =
+              "YES, " +
+              "<a href='https://www.officialcharts.com/charts/' target='_blank'>#" +
               response.position +
               "</a>";
+            document.getElementById("info").innerHTML = "";
             document.getElementById("updated_at").innerHTML =
-              "Last updated at " + date.toLocaleString();
+              "Updated: " + date.toLocaleString();
           } else {
             document.getElementById("answer").innerHTML = "No";
             document.getElementById("info").innerHTML = "What a bummer.";
