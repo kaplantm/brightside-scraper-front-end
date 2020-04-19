@@ -94,8 +94,7 @@ a:active {
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
-.error {
-  font-size: 0.8em;
+#error {
   letter-spacing: normal;
   color: hsl(0, 0%, 95%, 0.8);
 }

@@ -15,58 +15,64 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+let hasTimedOut = false;
+const maxTimeInMillis = 5000;
+
 function checkIfInCharts() {
-  const db = firebase.database();
-  const ref = db.ref();
+  setTimeout(() => {
+    hasTimedOut = true;
+    document.getElementById("loading-container").style.display = "none";
+    document.getElementById("results-container").style.display = "flex";
+  }, maxTimeInMillis);
 
   firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      firebase
-        .database()
-        .ref("songs/" + "killers_mrbrightside")
-        .once("value")
-        .then(function (snapshot) {
-          const response = snapshot.val();
-          console.log({ response });
-
-          if (response.position !== undefined) {
-            const date = new Date(0);
-            date.setUTCSeconds(response.updated_at / 1000);
-
-            document.getElementById("answer").innerHTML =
-              "YES, " +
-              "<a href='https://www.officialcharts.com/charts/' target='_blank'>#" +
-              response.position +
-              "</a>";
-            document.getElementById("info").innerHTML = "";
-            document.getElementById("updated_at").innerHTML =
-              "Updated: " + date.toLocaleString();
-          } else {
-            document.getElementById("answer").innerHTML = "No";
-            document.getElementById("info").innerHTML = "What a bummer.";
-          }
-          document.getElementById("loading-container").style.display = "none";
-          document.getElementById("results-container").style.display = "flex";
-        });
-    } else {
-      // User is signed out.
-      // do nothing
+    if (!hasTimedOut) {
+      document.getElementById("error").innerHTML = "";
+      if (user) {
+        // const songFolder = "songs/test/"; // LOCAL
+        const songFolder = "songs/"; // PROD
+        firebase
+          .database()
+          .ref(songFolder + "killers_mrbrightside")
+          .once("value")
+          .then(function (snapshot) {
+            const response = snapshot.val();
+            renderBasedOnResponse(response);
+          });
+      } else {
+        // User is signed out.
+        // do nothing
+      }
     }
   });
 
-  // return firebase
-  //   .database()
-  //   .ref("brightside")
-  //   .once("value")
-  //   .then(function (snapshot) {
-  //     console.log(snapshot.val());
-  //   });
   firebase
     .auth()
     .signInAnonymously()
     .catch(function (error) {
       console.log("fb", { error });
     });
+}
+
+function renderBasedOnResponse(response) {
+  if (response.position !== undefined) {
+    const date = new Date(0);
+    date.setUTCSeconds(response.updated_at / 1000);
+
+    document.getElementById("answer").innerHTML =
+      "YES, " +
+      "<a href='https://www.officialcharts.com/charts/' target='_blank'>#" +
+      response.position +
+      "</a>";
+    document.getElementById("info").innerHTML = "";
+    document.getElementById("updated_at").innerHTML =
+      "Updated: " + date.toLocaleString();
+  } else {
+    document.getElementById("answer").innerHTML = "No";
+    document.getElementById("info").innerHTML = "still a bop tho";
+  }
+  document.getElementById("loading-container").style.display = "none";
+  document.getElementById("results-container").style.display = "flex";
 }
 
 document.addEventListener("DOMContentLoaded", checkIfInCharts);
