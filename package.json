@@ -1,0 +1,22 @@
+{
+  "name": "brightside-scraper-js",
+  "version": "1.0.0",
+  "description": "https://appdividend.com/2018/03/18/how-to-setup-typescript-with-webpack-4/",
+  "main": "index.js",
+  "dependencies": {
+    "ts-loader": "^7.0.0",
+    "typescript": "^3.8.3",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack": "^4.42.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "build",
+    "start": "webpack-dev-server --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
