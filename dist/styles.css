@@ -1,0 +1,195 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  padding: 50px 20px 20px 20px;
+  background-color: hsl(212, 21%, 53%);
+  background-image: url("./assets/bg.jpg");
+  background-size: 20%;
+  color: #ffffff;
+  font-size: 40px;
+  font-family: "Helvetica", sans-serif;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.05em;
+  align-items: stretch;
+  flex: 1;
+  overflow-y: scroll;
+}
+a,
+a:visited {
+  color: hsl(200, 100%, 80%);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  color: hsl(194, 95%, 60%);
+  text-decoration: underline;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  max-width: 80%;
+}
+#loading-container {
+  min-height: 500px;
+  color: hsl(0, 0%, 100%, 0.8);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  flex-direction: column;
+
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
+  animation-timing-function: ease-in;
+}
+#results-container {
+  min-height: 500px;
+}
+#results-container p {
+  margin: 0;
+}
+#results-container {
+  display: none;
+  color: hsl(0, 0%, 100%, 1);
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+#results-container #answer {
+  font-weight: 800;
+  font-size: 3em;
+}
+#results-container #info {
+  font-size: 0.8em;
+  font-size: 2em;
+}
+#results-container #updated_at {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.4em;
+  letter-spacing: normal;
+  opacity: 0.8;
+}
+.spaced {
+  letter-spacing: 0.1em;
+}
+.loader {
+  border: 10px solid hsl(0, 0%, 95%, 0.5);
+  border-radius: 50%;
+  border-top: 10px solid hsl(204, 70%, 53%, 0.5);
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+#error {
+  letter-spacing: normal;
+  color: hsl(0, 0%, 95%, 0.8);
+}
+.youtube-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 560px;
+  height: 375px;
+  color: hsl(0, 0%, 95%, 0.8);
+  font-size: 0.5em;
+  letter-spacing: normal;
+  line-height: 2em;
+}
+.small-text {
+  font-size: 0.5em;
+}
+.credits {
+  margin: 30px;
+  opacity: 0.8;
+  font-size: 0.5em;
+  letter-spacing: normal;
+  font-style: italic;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}

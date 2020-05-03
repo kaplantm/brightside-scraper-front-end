@@ -1,4 +1,5 @@
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const path = require("path");
 
@@ -25,4 +26,18 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: "./*.html",
+      },
+      {
+        from: "./*.css",
+      },
+      {
+        from: "./assets",
+        to: "./assets",
+      },
+    ]),
+  ],
 };
