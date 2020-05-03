@@ -1,5 +1,3 @@
-https://appdividend.com/2018/03/18/how-to-setup-typescript-with-webpack-4/
-https://webpack.js.org/guides/development/
-https://stackoverflow.com/questions/37403747/firebase-permission-denied
+Front end code for http://ismrbrightsidestillintheukcharts.com/
 
-http://localhost:8080/
+Backend code: https://github.com/kaplantm/brightside-node-scraper/
