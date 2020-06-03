@@ -2,9 +2,15 @@ html,
 body {
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 * {
   box-sizing: border-box;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
 }
 body {
   text-align: center;
@@ -22,6 +28,7 @@ body {
   flex: 1;
   overflow-y: scroll;
 }
+
 a,
 a:visited {
   color: hsl(200, 100%, 80%);
@@ -108,13 +115,18 @@ a:active {
 .youtube-container {
   margin-top: 30px;
   margin-bottom: 30px;
-  width: 560px;
-  height: 375px;
   color: hsl(0, 0%, 95%, 0.8);
+  width: 100%;
   font-size: 0.5em;
   letter-spacing: normal;
   line-height: 2em;
 }
+
+.youtube-container iframe {
+  width: 560px;
+  height: 315px;
+}
+
 .small-text {
   font-size: 0.5em;
 }
@@ -124,6 +136,17 @@ a:active {
   font-size: 0.5em;
   letter-spacing: normal;
   font-style: italic;
+}
+@media only screen and (max-width: 800px) {
+  body {
+    font-size: 30px;
+  }
+  .wrapper {
+    max-width: 100%;
+  }
+  .wrapper iframe {
+    width: 100%;
+  }
 }
 
 /* Safari */
