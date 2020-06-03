@@ -35,8 +35,7 @@ module.exports = {
         from: "./*.css",
       },
       {
-        from: "./assets",
-        to: "./assets",
+        from: "./public",
       },
     ]),
   ],
