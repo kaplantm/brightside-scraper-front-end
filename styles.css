@@ -80,6 +80,7 @@ a:active {
   margin: 0;
 }
 #results-container {
+  display: flex;
   min-height: 500px;
   color: hsla(237, 27%, 44%, 1);
   align-items: center;

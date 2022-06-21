@@ -9,6 +9,7 @@
       content="Is Mr. Brightside by the Killers in the UK charts right now? Check in for an updated chart position from UK Official Charts."
     />
     <meta name="robots" content="index, nofollow" />
+    <link rel="preload" href="styles.css" as="style" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
@@ -23,9 +24,9 @@
           <div class="loader" role="progressbar"></div>
         </div>
         <div id="results-container">
-          <p id="answer" />
-          <p id="info" />
-          <div id="error" />
+          <p id="answer"></p>
+          <p id="info"></p>
+          <div id="error"></div>
           <p id="updated_at">Updating...</p>
         </div>
       </section>
@@ -53,6 +54,6 @@
       </footer>
     </div>
 
-    <script src="app.js" type="text/javascript"></script>
+    <script async src="app.js" type="text/javascript"></script>
   </body>
 </html>

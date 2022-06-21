@@ -40,7 +40,6 @@ This site was implemented using a custom webscraper for
 `;
 function displayError(updated_at?: string) {
   document.getElementById("loading-container").style.display = "none";
-  document.getElementById("results-container").style.display = "flex";
   document.getElementById("answer").innerHTML = "I don't know ☹️";
   document.getElementById("error").innerHTML = errorHTML;
   document.getElementById(
@@ -63,10 +62,8 @@ function renderBasedOnBrightsideData(brightsideData) {
     document.getElementById("info").innerHTML = "still a bop tho";
   }
   document.getElementById("loading-container").style.display = "none";
-  document.getElementById("results-container").style.display = "flex";
-  document.getElementById(
-    "updated_at"
-  ).innerHTML = ` <a href='https://www.officialcharts.com/charts/' target='_blank'>Updated: ${getFormattedDateFromEpochTime(
+  const el = document.getElementById("updated_at");
+  el.innerHTML = ` <a href='https://www.officialcharts.com/charts/' target='_blank'>Updated: ${getFormattedDateFromEpochTime(
     updated_at
   )}</a>`;
 }
@@ -77,4 +74,4 @@ function getFormattedDateFromEpochTime(updated_at) {
   return date.toLocaleString();
 }
 
-document.addEventListener("DOMContentLoaded", checkIfInCharts);
+checkIfInCharts();

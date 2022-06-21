@@ -1,5 +1,6 @@
 const TerserPlugin = require("terser-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const path = require("path");
 
@@ -21,22 +22,27 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin({ extractComments: true })],
+    minimizer: [
+      new TerserPlugin({ extractComments: true }),
+      new CssMinimizerPlugin(),
+    ],
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: "./*.html",
-      },
-      {
-        from: "./*.css",
-      },
-      {
-        from: "./public",
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./*.html",
+        },
+        {
+          from: "./*.css",
+        },
+        {
+          from: "./public",
+        },
+      ],
+    }),
   ],
 };
