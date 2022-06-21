@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Is Mr. Brightside in the UK charts?</title>
+    <title>Is Mr. Brightside still in the UK charts?</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Is Mr. Brightside by the Killers in the UK charts right now? Check in for an updated chart position from UK Official Charts."
+      content="Is Mr. Brightside by The Killers still the UK charts? Check in for an updated chart position."
     />
     <meta name="robots" content="index, nofollow" />
+    <link rel="preload" href="styles.css" as="style" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="canonical" href="https://ismrbrightsidestillintheukcharts.com/" />
+
   </head>
   <body>
     <div class="wrapper">
-      <h1>Is Mr. Brightside in the UK charts?</h1>
-      <div id="loading-container">
-        <div class="loader"></div>
-      </div>
-      <div id="results-container">
-        <p id="answer">
-          No Idea
-        </p>
-        <p id="info"></p>
-        <div id="error">
-          <p>
-            This site was implemented using a custom webscraper for
-            <a
-              href="https://www.officialcharts.com/charts/"
-              rel="noopener"
-              target="_blank"
-              >Official Charts</a
-            >. Changes to their page may have broken our system.
-          </p>
-          <br />
-          <p>That doesn't change the fact that Mr. Brightside is a bop.</p>
-        </div>
-        <p id="updated_at"></p>
-      </div>
+      <main>
+        <h1>Is Mr. Brightside in the UK charts?</h1>
 
-      <div class="youtube-container">
-        Listen now:<br />
-        <iframe
-          title="Mr. Brightside Music Video (Youtube)"
-          src="https://www.youtube-nocookie.com/embed/gGdGFtwCNBE?controls=0"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div class="credits">
+        <article>
+          <div id="loading-container">
+            <div class="loader" role="progressbar"></div>
+          </div>
+          <div id="results-container">
+            <p id="answer"></p>
+            <p id="info"></p>
+            <div id="error"></div>
+            <p id="updated_at"></p>
+          </div>
+       
+
+      
+          Mr. Brightside was released by The Killers in 2004 and has spent more
+          that 300 weeks in the UK Official Charts.
+        </section>
+
+        <aside class="youtube-container">
+          <p>Listen now:</p>
+
+          <iframe
+            title="Mr. Brightside Music Video (Youtube)"
+            class="lazy"
+            data-src="https://www.youtube-nocookie.com/embed/gGdGFtwCNBE?controls=0"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </aside>
+      </main>
+      <footer class="credits">
         Created by
         <a href="https://github.com/kaplantm" rel="noopener" target="_blank"
           >Toni</a
@@ -58,9 +59,9 @@
           target="_blank"
           >ismrbrightsidestillinthecharts.com</a
         >
-      </div>
+      </footer>
     </div>
 
-    <script src="app.js" type="text/javascript"></script>
+    <script async src="app.js" type="text/javascript"></script>
   </body>
 </html>
