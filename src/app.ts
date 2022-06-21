@@ -26,9 +26,23 @@ function checkIfInCharts() {
   xhttp.send();
 }
 
+const errorHTML = `<p>
+This site was implemented using a custom webscraper for
+<a
+  href="https://www.officialcharts.com/charts/"
+  rel="noopener"
+  target="_blank"
+  >Official Charts</a
+>. Changes to their page may have broken our system.
+</p>
+<br />
+<p>That doesn't change the fact that Mr. Brightside is a bop.</p>
+`;
 function displayError(updated_at?: string) {
   document.getElementById("loading-container").style.display = "none";
   document.getElementById("results-container").style.display = "flex";
+  document.getElementById("answer").innerHTML = "I don't know ☹️";
+  document.getElementById("error").innerHTML = errorHTML;
   document.getElementById(
     "updated_at"
   ).innerHTML = ` <a href='https://www.officialcharts.com/charts/' target='_blank'>Updated: ${

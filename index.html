@@ -14,31 +14,23 @@
   <body>
     <div class="wrapper">
       <h1>Is Mr. Brightside in the UK charts?</h1>
-      <div id="loading-container">
-        <div class="loader"></div>
-      </div>
-      <div id="results-container">
-        <p id="answer">
-          No Idea
-        </p>
-        <p id="info"></p>
-        <div id="error">
-          <p>
-            This site was implemented using a custom webscraper for
-            <a
-              href="https://www.officialcharts.com/charts/"
-              rel="noopener"
-              target="_blank"
-              >Official Charts</a
-            >. Changes to their page may have broken our system.
-          </p>
-          <br />
-          <p>That doesn't change the fact that Mr. Brightside is a bop.</p>
+      <p>
+        Mr. Brightside was release by The Killers in 2004 and has spent more
+        that 300 weeks in the UK official charts.
+      </p>
+      <section>
+        <div id="loading-container">
+          <div class="loader" role="progressbar"></div>
         </div>
-        <p id="updated_at"></p>
-      </div>
+        <div id="results-container">
+          <p id="answer" />
+          <p id="info" />
+          <div id="error" />
+          <p id="updated_at">Updating...</p>
+        </div>
+      </section>
 
-      <div class="youtube-container">
+      <section class="youtube-container">
         Listen now:<br />
         <iframe
           title="Mr. Brightside Music Video (Youtube)"
@@ -47,8 +39,8 @@
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-      </div>
-      <div class="credits">
+      </section>
+      <footer class="credits">
         Created by
         <a href="https://github.com/kaplantm" rel="noopener" target="_blank"
           >Toni</a
@@ -58,7 +50,7 @@
           target="_blank"
           >ismrbrightsidestillinthecharts.com</a
         >
-      </div>
+      </footer>
     </div>
 
     <script src="app.js" type="text/javascript"></script>
