@@ -1,3 +1,5 @@
+import LazyLoad from "vanilla-lazyload";
+
 function checkIfInCharts() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -40,6 +42,7 @@ This site was implemented using a custom webscraper for
 `;
 function displayError(updated_at?: string) {
   document.getElementById("loading-container").style.display = "none";
+  document.getElementById("results-container").style.display = "flex";
   document.getElementById("answer").innerHTML = "I don't know ☹️";
   document.getElementById("error").innerHTML = errorHTML;
   document.getElementById(
@@ -53,6 +56,7 @@ function renderBasedOnBrightsideData(brightsideData) {
   document.getElementById("error").innerHTML = "";
 
   const { position, updated_at } = brightsideData;
+  document.getElementById("results-container").style.display = "flex";
 
   if (position) {
     document.getElementById("answer").innerHTML = `YES, #${position}</a>`;
@@ -61,6 +65,7 @@ function renderBasedOnBrightsideData(brightsideData) {
     document.getElementById("answer").innerHTML = "No";
     document.getElementById("info").innerHTML = "still a bop tho";
   }
+
   document.getElementById("loading-container").style.display = "none";
   const el = document.getElementById("updated_at");
   el.innerHTML = ` <a href='https://www.officialcharts.com/charts/' target='_blank'>Updated: ${getFormattedDateFromEpochTime(
@@ -75,3 +80,7 @@ function getFormattedDateFromEpochTime(updated_at) {
 }
 
 checkIfInCharts();
+
+const lazyLoadInstance = new LazyLoad({
+  // Your custom settings go here
+});

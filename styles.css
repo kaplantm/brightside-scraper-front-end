@@ -80,18 +80,17 @@ a:active {
   margin: 0;
 }
 #results-container {
-  display: flex;
+  display: none;
   min-height: 500px;
   color: hsla(237, 27%, 44%, 1);
   align-items: center;
   justify-content: center;
   flex: 1;
   flex-direction: column;
-  margin-bottom: 30px;
 }
 #results-container #answer {
   font-weight: 800;
-  font-size: 80px;
+  font-size: 75px;
   text-shadow: 2px 2px 2px #fff;
 }
 
@@ -132,6 +131,7 @@ a:active {
 .credits {
   margin: 30px;
   opacity: 0.8;
+  font-size: 15px;
 
   letter-spacing: normal;
   font-style: italic;
